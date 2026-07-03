@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大学教職員もスタンディング（アピール）します！！</title>
+    <style>
+        /* 全体の基本設定（洗練されたフォントと背景） */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: #333333;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 画面中央に収めるコンテナ */
+        .container {
+            max-width: 680px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* 💡 メインタイトル部分（背景を透過にし、上下の余白を調整） */
+        .main-title-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* 💡 タイトル画像がスマホ画面からはみ出さないように設定 */
+        .main-title-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* ✨ タイトルの下のメッセージスタイル */
+        .sub-message {
+            font-size: 24px;          /* 22px〜24pxにサイズアップして存在感を強化 */
+            font-weight: 700;         /* しっかりとした太字に変更 */
+            color: #2c3e50;           /* 開催概要カードと統一感のある、知的で洗練されたディープネイビー */
+            letter-spacing: 0.08em;   /* 文字間隔をさらに広げ、パッと見やすくて美しい余白に */
+            line-height: 1.6;         /* 大きめの文字に適した行間 */
+            text-align: center;       /* 中央揃え */
+            margin-top: 25px;         /* 画像との間の余白 */
+            margin-bottom: 25px;      /* 下の追加画像との間の余白を調整 */
+            padding: 0 15px;          /* スマホ等での端の詰まり防止 */
+        }
+
+        /* 新しく挿入する画像（senden1.png）のボックス設定 */
+        .senden-image-box {
+            text-align: center;
+            margin-bottom: 40px;      /* 下の日時カードとの間の余白 */
+            padding: 0 10px;
+        }
+
+        /* 画像がはみ出さないようにし、少し角を丸くして柔らかい印象に */
+        .senden-image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* ほんの少しだけ影をつけて綺麗に見せます */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 開催概要カード（見やすさを追求） */
+        .info-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .info-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 行頭のスタイリッシュなチェックマーク */
+        .info-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #e74c3c; /* 鮮やかな赤色のアシスト */
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        /* 地図画像を表示するボックス */
+        .map-box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        /* 画像を丸角にしてスマホでもきれいにはみ出さないように設定 */
+        .map-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 呼びかけ人セクション */
+        .section-box {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #7f8c8d;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .names-list {
+            font-size: 16px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        /* 連絡先セクション（メールアドレスのリンク化） */
+        .contact-box {
+            text-align: center;
+            background: #e9eef3;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 30px; /* 💡 ボタンとの間に余白を作るために追加 */
+        }
+
+        .contact-box a {
+            color: #2980b9;
+            text-decoration: none;
+            border-bottom: 1px dashed #2980b9;
+            transition: all 0.2s ease;
+        }
+
+        .contact-box a:hover {
+            color: #1abc9c;
+            border-bottom-style: solid;
+        }
+
+        /* ✨ 追加：SNSシェアボタン全体の枠組み */
+        .share-container {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .share-title {
+            font-size: 15px;
+            color: #7f8c8d;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px; /* ボタン同士の間隔 */
+            flex-wrap: wrap; /* スマホで入り切らない場合に折り返す */
+        }
+
+        /* ✨ 追加：各シェアボタンの共通スタイル */
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px; /* 丸みのある可愛いボタン */
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            min-width: 110px;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px); /* ホバー時に少し浮き上がらせる */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0.9;
+        }
+
+        /* 各SNSの少し落ち着かせたブランドカラー設定 */
+        .btn-x { background-color: #111111; }         /* X（旧Twitter） */
+        .btn-fb { background-color: #3b5998; }        /* Facebook */
+        .btn-line { background-color: #06b712; }      /* LINE */
+
+        /* スマートフォン画面への対応（レスポンシブ対応） */
+        @media (max-width: 600px) {
+            .container { margin: 10px auto; padding: 10px; }
+            .main-title-box { margin-bottom: 20px; }
+            .sub-message { font-size: 19px; margin-bottom: 20px; letter-spacing: 0.05em; }
+            .senden-image-box { margin-bottom: 25px; }
+            .info-card { padding: 25px 20px; }
+            .info-list li { font-size: 16px; }
+            .section-box { padding: 20px; }
+            .map-box { padding: 10px; }
+            /* ✨ スマホの時はボタンの横幅を少し広げて押しやすく */
+            .share-btn { padding: 12px 20px; flex: 1; min-width: 90px; font-size: 14px; }
+            .share-buttons { padding: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="main-title-box">
+            <img src="title01.png" alt="大学教職員もスタンディング（アピール）します！！">
+        </div>
+
+        <div class="sub-message">
+            民主主義と平和、憲法、暮らし、そして大学のことなど、伝えたいと思います。
+        </div>
+
+        <div class="senden-image-box">
+            <img src="senden1.png" alt="アピール画像">
+        </div>
+
+        <div class="info-card">
+            <ul class="info-list">
+                <li>2026年７月６日（月）18時～18時40分</li>
+                <li>四条烏丸交差点・南西側（予定）</li>
+                <li>大学関係者以外の方もぜひご参加ください。</li>
+                <li>プラカードをお持ちください（主催者でも準備します）。</li>
+            </ul>
+        </div>
+
+        <div class="map-box">
+            <img src="map01.png" alt="四条烏丸交差点・南西側の地図案内">
+        </div>
+
+        <div class="section-box">
+            <h2>呼びかけ人（アイウエオ順）</h2>
+            <div class="names-list">
+                安東正玄（立命館大学）、奥野恒久（龍谷大学）、駒込武（京都大学）、瀧本知加（京都府立大学）
+            </div>
+        </div>
+
+        <div class="contact-box">
+            連絡先：細川孝（<a href="mailto:hosokawa@biz.ryukoku.ac.jp">hosokawa@biz.ryukoku.ac.jp</a>）
+        </div>
+
+        <div class="share-container">
+            <div class="share-title">このページをシェアして拡散する</div>
+            <div class="share-buttons">
+                <a href="https://twitter.com/share?url=https://bunchan1999-ship-it.github.io/tetssite/&text=大学教職員もスタンディング（アピール）します！！" target="_blank" rel="noopener noreferrer" class="share-btn btn-x">
+                    Xでシェア
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://bunchan1999-ship-it.github.io/tetssite/" target="_blank" rel="noopener noreferrer" class="share-btn btn-fb">
+                    Facebook
+                </a>
+                <a href="https://social-plugins.line.me/lineit/share?url=https://bunchan1999-ship-it.github.io/tetssite/" target="_blank" rel="noopener noreferrer" class="share-btn btn-line">
+                    LINEで送る
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
